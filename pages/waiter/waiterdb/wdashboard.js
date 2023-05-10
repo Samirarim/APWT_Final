@@ -13,15 +13,11 @@ export default function WaiterDashbord() {
       <div>
       <h1>Waiter Dashboard</h1>
       <Link href="/profile"> Profile </Link><br></br><br></br><br></br>
-      <button><Link href="/menu"> Menu </Link></button>
-      <Link href="/waiter/waiterdb/viewmenu">View </Link>
-      <Link href="/waiter/waiterdb/findmenu">Find </Link>
+      <button><Link href="/waiter/waiterdb/menu/menudisplay"> Menu </Link></button>
       <br></br><br></br>
-      <button><Link href="/order"> Order </Link></button>
-      <Link href="/waiter/waiterdb/vieworder">View </Link>
+      <button><Link href="/waiter/waiterdb/order/orderdisplay"> Order </Link></button>
       <br></br><br></br>
-      <button><Link href="/table"> Table</Link></button>
-      <Link href="/waiter/waiterdb/viewtable">View </Link>
+      <button><Link href="/waiter/waiterdb/table/tabledisplay"> Table</Link></button>
       <br></br><br></br><br></br><br></br>
       <Link href="/logout"> Logout</Link>
       </div>

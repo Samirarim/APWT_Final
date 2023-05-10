@@ -1,5 +1,5 @@
-import MyLayout from "./components/layout"
-import Header from "./components/header"
+import MyLayout from "../components/layout"
+import Header from "../components/header"
 import Link from "next/link"
 
 export default function Login() {

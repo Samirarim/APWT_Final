@@ -4,7 +4,7 @@ import axios from "axios"
 import { useState } from "react"
 import { useRouter } from 'next/router'
 
-export default function AddWaiter() {
+export default function AddCook() {
     const router = useRouter();
     const {
         register,
@@ -16,18 +16,18 @@ export default function AddWaiter() {
     const onSubmit = async (data) => {
         console.log(data);
         const formData = new FormData();
-        formData.append('w_name', data.w_name);
-        formData.append('w_age', data.w_age);
-        formData.append('w_gender', data.w_gender);
-        formData.append('w_address', data.w_address);
-        formData.append('w_salary', data.w_salary);
-        formData.append('w_email', data.w_email);
-        formData.append('w_contact', data.w_contact);
+        formData.append('c_name', data.c_name);
+        formData.append('c_age', data.c_age);
+        formData.append('c_gender', data.c_gender);
+        formData.append('c_address', data.c_address);
+        formData.append('c_salary', data.c_salary);
+        formData.append('c_email', data.c_email);
+        formData.append('c_contact', data.c_contact);
         formData.append('m_id', data.m_id);
       
         console.log(formData);
         try {
-            const response = await axios.post("http://localhost:3000/manager/addwaiter",
+            const response = await axios.post("http://localhost:3000/manager/addcook",
                 formData, {
                 headers: {
                     "Content-Type": "application/json"
@@ -35,66 +35,66 @@ export default function AddWaiter() {
             });
           
 
-            setSuccess('Waiter added successfully');
+            setSuccess('Cook added successfully');
             reset();
 
         }
         catch (error) {
             console.log(error.response.data.message);
             
-            setSuccess('Waiter add unsuccessfull ' + error.response.data.message);
+            setSuccess('Cook add unsuccessfull ' + error.response.data.message);
         }
     };
     return (
       <>
       
-      <MyLayout title = "Waiters"/>
+      <MyLayout title = "Cooks"/>
               <h1>
-                  Add Waiter
-                                </h1>
+                  Add Cook
+              </h1>
        <p id="filled_success_help"><span > {success}</span></p>
       
             <form onSubmit={handleSubmit(onSubmit)} encType="application/json" action="#">
               <div>
-                      <label for="w_name" >Name</label>
-                        <input type="text" id="w_name" placeholder="name" required=""{...register('w_name', { required: true })}/>
-                        {errors.w_name &&
+                      <label for="c_name" >Name</label>
+                        <input type="text" id="c_name" placeholder="name" required=""{...register('c_name', { required: true })}/>
+                        {errors.c_name &&
                         <p id="outlined_error_help"><span >Name is required</span></p>
                         }
                 </div>
                 <div>
-                      <label for="w_age" >Age</label>
-                        <input type="number" id="w_age" placeholder="age" required=""{...register('w_age', { required: true })}/>
-                        {errors.w_age &&
+                      <label for="c_age" >Age</label>
+                        <input type="number" id="c_age" placeholder="age" required=""{...register('c_age', { required: true })}/>
+                        {errors.c_age &&
                         <p id="outlined_error_help"><span >Age is required</span></p>
                         }
                 </div>
                 <div>
-                      <label for="w_gender" >Gender</label>
-                        <input type="text" id="w_gender" placeholder="gender" required=""{...register('w_gender', { required: true })}/>
-                        {errors.w_gender &&
+                      <label for="c_gender" >Gender</label>
+                        <input type="text" id="c_gender" placeholder="gender" required=""{...register('c_gender', { required: true })}/>
+                        {errors.c_gender &&
                         <p id="outlined_error_help"><span >Gender is required</span></p>
                         }
                 </div>
                 <div>
-                      <label for="w_address" >Address</label>
-                      <textarea id="w_address"  rows="2" placeholder="Full Adress here...." {...register('w_address', { required: true })} />
+                      <label for="c_address" >Address</label>
+                      <textarea id="c_address"  rows="2" placeholder="Full Adress here...." {...register('c_address', { required: true })} />
                 </div>
                 <div>
-                      <label for="w_salary" >Salary</label>
-                        <input type="number" id="w_salary" placeholder="salary" required=""{...register('w_salary', { required: true })}/>
-                        {errors.w_salary &&
+                      <label for="c_salary" >Salary</label>
+                        <input type="number" id="c_salary" placeholder="salary" required=""{...register('c_salary', { required: true })}/>
+                        {errors.c_salary &&
                         <p id="outlined_error_help"><span >Age is required</span></p>
                         }
                 </div>
                 <div>
-                    <label for="w_email" >Email</label>
-                        <input type="email" id="w_email" placeholder="name@company.com" required=""
-                                            {...register('w_email', { required: true, pattern: /\S+@\S+\.\S+/ })}
+                    <label for="c_email" >Email</label>
+                        <input type="email" id="c_email" placeholder="name@company.com" required=""
+                                            {...register('c_email', { required: true, pattern: /\S+@\S+\.\S+/ })}
                                         />
-                                          {errors.w_email && (
+                                          {errors.c_email && (
                         <p>
-                            {errors.w_email.type === 'required'
+                            {errors.c_email.type === 'required'
                                                     ?
                                                     <p id="outlined_error_help" ><span class="font-medium">Email is required</span></p>
 
@@ -105,9 +105,9 @@ export default function AddWaiter() {
                     )}
                   </div>
                 <div>
-                      <label for="w_contact" >Contact</label>
-                        <input type="text" id="w_contact" placeholder="contact" required=""{...register('w_contact', { required: true })}/>
-                        {errors.w_contact &&
+                      <label for="c_contact" >Contact</label>
+                        <input type="text" id="c_contact" placeholder="contact" required=""{...register('c_contact', { required: true })}/>
+                        {errors.c_contact &&
                         <p id="outlined_error_help"><span >Contact is required</span></p>
                         }
                 </div>

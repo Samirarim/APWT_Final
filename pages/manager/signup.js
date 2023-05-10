@@ -22,16 +22,17 @@ export default function SignUp() {
 
     const [success, setSuccess] = useState('')
     const onSubmit = async (data) => {
-        console.log(data);
+        console.log(data); 
         const formData = new FormData();
         formData.append('m_name', data.m_name);
         formData.append('m_age', data.m_age);
         formData.append('m_gender', data.m_gender);
         formData.append('m_address', data.m_address);
+        formData.append('m_salary', data.m_salary);
         formData.append('m_email', data.m_email);
         formData.append('m_contact', data.m_contact);
         formData.append('m_password', data.m_password);
-        console.log(formData);
+        console.log(formData);  
     
         try {
             const response = await axios.post("http://localhost:3000/manager/signup",
@@ -64,24 +65,24 @@ export default function SignUp() {
                                 </h1>
        <p id="filled_success_help"><span > {success}</span></p>
       
-            <form onSubmit={handleSubmit(onSubmit)} action="#">
+            <form onSubmit={handleSubmit(onSubmit)} encType="application/json" action="#">
               <div>
                       <label>Name</label>
-                        <input type="text" id="m_name" placeholder="name" required=""{...register('m_name', { required: true })}/>
+                        <input type="text" id="m_name" placeholder="name" required=""{...register("m_name", { required: true })}/>
                         {errors.m_name &&
                         <p id="outlined_error_help"><span >Name is required</span></p>
                         }
                 </div>
                 <div>
                       <label>Age</label>
-                        <input type="text" id="m_age" placeholder="age" required=""{...register('m_age', { required: true })}/>
+                        <input type="number" id="m_age" placeholder="age" required=""{...register("m_age", { required: true })}/>
                         {errors.m_age &&
                         <p id="outlined_error_help"><span >Age is required</span></p>
                         }
                 </div>
                 <div>
                       <label>Gender</label>
-                        <input type="text" id="m_gender" placeholder="gender" required=""{...register('m_gender', { required: true })}/>
+                        <input type="text" id="m_gender" placeholder="gender" required=""{...register("m_gender", { required: true })}/>
                         {errors.m_gender &&
                         <p id="outlined_error_help"><span >Gender is required</span></p>
                         }
@@ -89,12 +90,19 @@ export default function SignUp() {
                 <div>
                  
                     <label>Address</label>
-                    <textarea id="m_address"  rows="2" placeholder="Full Adress here...." {...register('m_address', { required: true })} />
+                    <textarea id="m_address"  rows="2" placeholder="Full Adress here...." {...register("m_address", { required: true })} />
+                </div>
+                <div>
+                      <label>Salary</label>
+                        <input type="number" id="m_salary" required=""{...register("m_salary", { required: true })}/>
+                        {errors.m_gender &&
+                        <p id="outlined_error_help"><span >Salary is required</span></p>
+                        }
                 </div>
                 <div>
                     <label>Your email</label>
                         <input type="email" id="m_email" placeholder="name@company.com" required=""
-                                            {...register('m_email', { required: true, pattern: /\S+@\S+\.\S+/ })}
+                                            {...register("m_email", { required: true, pattern: /\S+@\S+\.\S+/ })}
                                         />
                                           {errors.m_email && (
                         <p>
