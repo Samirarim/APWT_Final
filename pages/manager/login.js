@@ -14,7 +14,7 @@ export default function SignIn() {
     event.preventDefault()
 
     try {
-      const response = await axios.post('http://localhost:3000/manager/signin', {m_email,m_password })
+      const response = await axios.post('https://nestjsproject-production-364f.up.railway.app/manager/signin', {m_email,m_password })
       console.log("res: "+response.data)
       
         sessionStorage.setItem('m_email', response.data);
@@ -73,37 +73,7 @@ export default function SignIn() {
   </div>
 </div>
 </main>
-   
-    {/* <div>
-    <section>
-    <form onSubmit={handleSubmit}>
-  
-    <div>
-      <h2>Sign In</h2>
-      <div>
-        <label for="m_email">Email</label>
 
-        <input type="email" value={m_email} onChange={(e) => setEmail(e.target.value)}  />
-       
-                </div>
-      <div>
-        <label for="m_password">Password</label>
-        <input type="password" value={m_password} onChange={(e) => setPassword(e.target.value)}  />
-    
-                </div>
-       <button type="submit" >Submit</button>
-                {error &&
-                  <div>
-                    <p id="outlined_error_help"><span>{error}</span></p>
-                  </div>
-                }
-                <button><Link href="/manager/signup">Sign Up</Link></button>
-                </div>
-          </form>
-      
-</section>
-
-</div> */}
     </>
   )
 }

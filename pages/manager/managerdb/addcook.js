@@ -28,7 +28,7 @@ export default function AddCook() {
       
         console.log(formData);
         try {
-            const response = await axios.post("http://localhost:3000/manager/addcook",
+            const response = await axios.post("https://nestjsproject-production-364f.up.railway.app/manager/addcook",
                 formData, {
                 headers: {
                     "Content-Type": "application/json"

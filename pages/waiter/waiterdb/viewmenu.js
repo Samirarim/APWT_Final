@@ -31,7 +31,7 @@ export default function GetMenu({ data }) {
   
  export async function getServerSideProps() {
  
-      const response = await axios.get('http://localhost:3000/waiter/viewmenu');
+      const response = await axios.get('https://nestjsproject-production-364f.up.railway.app/waiter/viewmenu');
       const data = await response.data;
     
   return { props: { data } }

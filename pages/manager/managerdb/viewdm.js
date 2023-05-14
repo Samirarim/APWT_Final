@@ -32,7 +32,7 @@ export default function GetDM({ data }) {
   
  export async function getServerSideProps() {
  
-      const response = await axios.get('http://localhost:3000/manager/viewdeliveryman');
+      const response = await axios.get('https://nestjsproject-production-364f.up.railway.app/manager/viewdeliveryman');
       const data = await response.data;
     
   return { props: { data } }

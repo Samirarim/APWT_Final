@@ -30,7 +30,7 @@ export default function GetTable({ data }) {
   
  export async function getServerSideProps() {
  
-      const response = await axios.get('http://localhost:3000/waiter/viewtable');
+      const response = await axios.get('https://nestjsproject-production-364f.up.railway.app/waiter/viewtable');
       const data = await response.data;
     
   return { props: { data } }

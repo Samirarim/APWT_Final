@@ -25,7 +25,7 @@ export default function CookDetails({ data }) {
 
       if (confirmed) {
         const response = await axios.delete(
-          "http://localhost:3000/manager/removedeliveryman/" + dm_id
+          "https://nestjsproject-production-364f.up.railway.app/manager/removedeliveryman/" + dm_id
         );
         const data = await response.data;
         // handle successful delete
@@ -43,7 +43,7 @@ export default function CookDetails({ data }) {
 
       if (confirmed) {
         const response = await axios.patch(
-          "http://localhost:3000/manager/updatedeliveryman/" + dm_id,
+          "https://nestjsproject-production-364f.up.railway.app/manager/updatedeliveryman/" + dm_id,
           {
             dm_name: dmName,
             dm_age: dmAge,
@@ -274,7 +274,7 @@ export default function CookDetails({ data }) {
   export async function getServerSideProps(context) {
     const dm_id=context.params.dm_id;
    
-       const response = await axios.get('http://localhost:3000/manager/getdeliveryman/'+dm_id);
+       const response = await axios.get('https://nestjsproject-production-364f.up.railway.app/manager/getdeliveryman/'+dm_id);
        const data = await response.data;
       
    return { props: { data } }

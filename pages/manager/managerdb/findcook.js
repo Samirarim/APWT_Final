@@ -58,7 +58,7 @@ export default function SearchCook({ data }) {
 export async function getServerSideProps({ query }) {
   const inputValue = query.inputValue;
   try {
-  const response = await axios.get('http://localhost:3000/manager/getcook/'+inputValue);
+  const response = await axios.get('https://nestjsproject-production-364f.up.railway.app/manager/getcook/'+inputValue);
   const data = await response.data;
 
   return {

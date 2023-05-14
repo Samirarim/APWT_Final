@@ -24,7 +24,7 @@ export default function OrderDetails({ data }) {
 
       if (confirmed) {
         const response = await axios.delete(
-          "http://localhost:3000/waiter/cancelorder/" + o_id
+          "https://nestjsproject-production-364f.up.railway.app/waiter/cancelorder/" + o_id
         );
         const data = await response.data;
         // handle successful delete
@@ -42,7 +42,7 @@ export default function OrderDetails({ data }) {
 
       if (confirmed) {
         const response = await axios.patch(
-          "http://localhost:3000/waiter/updateorder/" + o_id,
+          "https://nestjsproject-production-364f.up.railway.app/waiter/updateorder/" + o_id,
           {
             o_name: oName,
             o_type: oType,
@@ -217,7 +217,7 @@ export async function getServerSideProps(context) {
   const o_id = context.params.o_id;
 
   const response = await axios.get(
-    "http://localhost:3000/waiter/getorder/" + o_id
+    "https://nestjsproject-production-364f.up.railway.app/waiter/getorder/" + o_id
   );
   const data = await response.data;
 

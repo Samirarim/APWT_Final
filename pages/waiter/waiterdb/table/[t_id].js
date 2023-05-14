@@ -22,7 +22,7 @@ export default function MenuDetails({ data }) {
 
       if (confirmed) {
         const response = await axios.delete(
-          "http://localhost:3000/waiter/canceltable/" + t_id
+          "https://nestjsproject-production-364f.up.railway.app/waiter/canceltable/" + t_id
         );
         const data = await response.data;
         // handle successful delete
@@ -40,7 +40,7 @@ export default function MenuDetails({ data }) {
 
       if (confirmed) {
         const response = await axios.patch(
-          "http://localhost:3000/waiter/updatetable/" + t_id,
+          "https://nestjsproject-production-364f.up.railway.app/waiter/updatetable/" + t_id,
           {
             t_position: tPosition,
             seatcapacity: tCapacity,
@@ -175,40 +175,9 @@ export async function getServerSideProps(context) {
   const t_id = context.params.t_id;
 
   const response = await axios.get(
-    "http://localhost:3000/waiter/gettable/" + t_id
+    "https://nestjsproject-production-364f.up.railway.app/waiter/gettable/" + t_id
   );
   const data = await response.data;
 
   return { props: { data } };
 }
-// import Link from "next/link"
-// import Image from "next/image"
-// import axios from "axios"
-// import { useRouter } from "next/router"
-// import MyLayout from "@/pages/components/layout"
-// import TableData from "@/pages/components/tabledata"
-
-
-// export default function OrderDetails({ data }) {
-//     const router = useRouter();
-//     return (
-//       <>
-//         <MyLayout title = "Table Details"/>
-//         <TableData data={data}/>
-//      <br></br>
-//             <button type="button" onClick={() => router.back()}>
-//             Click here to go back
-//             </button>
-        
-//       </>
-//     )
-//   }
-
-//   export async function getServerSideProps(context) {
-//     const t_id=context.params.t_id;
-   
-//        const response = await axios.get('http://localhost:3000/waiter/gettable/'+t_id);
-//        const data = await response.data;
-      
-//    return { props: { data } }
-//    }

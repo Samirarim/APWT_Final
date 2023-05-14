@@ -33,7 +33,7 @@ export default function GetWaiter({ data }) {
   
  export async function getServerSideProps() {
  
-      const response = await axios.get('http://localhost:3000/manager/viewwaiter');
+      const response = await axios.get('https://nestjsproject-production-364f.up.railway.app/manager/viewwaiter');
       const data = await response.data;
     
   return { props: { data } }

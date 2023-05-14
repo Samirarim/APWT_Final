@@ -35,7 +35,7 @@ export default function SignUp() {
         console.log(formData);  
     
         try {
-            const response = await axios.post("http://localhost:3000/manager/signup",
+            const response = await axios.post("https://nestjsproject-production-364f.up.railway.app/manager/signup",
             formData, {
              headers: {
                 "Content-Type": "application/json"
