@@ -19,24 +19,6 @@ export default function Waiter({ data }) {
     }
     fetchData();
   }, []);
-
-//   useEffect(() => {
-//     async function fetchData() {
-//       try {
-//         // alert("are you sure?")
-//         const response = await axios.get(`http://localhost:3000/api/coupons`);
-//         const data = await response.data;
-
-//         setCoupons(data);
-//       } catch (error) {
-//         console.log("Error fetching coupons data:", error);
-//       }
-//     }
-//     fetchData();
-//   }, []);
-
-  // console.log("the thing is that: ", coupons);
-
   const handleRemove = async (id) => {
     try {
       const confirmed = window.confirm("Are you sure you want to remove the item?");
