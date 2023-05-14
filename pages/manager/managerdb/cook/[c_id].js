@@ -1,7 +1,6 @@
 import axios from "axios"
 import { useRouter } from "next/router"
 import MyLayout from "@/pages/components/layout"
-import CookInfo from "@/pages/components/cookinfo"
 import { useState } from "react";
 
 export default function CookDetails({ data }) {
