@@ -32,7 +32,7 @@ export default function GetDM({ data }) {
   
  export async function getServerSideProps() {
  
-      const response = await axios.get('advancedwebtech-useremployee-production.up.railway.app/manager/viewdeliveryman');
+      const response = await axios.get('https://advancedwebtech-useremployee-production.up.railway.app/manager/viewdeliveryman');
       const data = await response.data;
     
   return { props: { data } }

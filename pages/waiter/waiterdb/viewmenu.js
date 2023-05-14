@@ -31,7 +31,7 @@ export default function GetMenu({ data }) {
   
  export async function getServerSideProps() {
  
-      const response = await axios.get('advancedwebtech-useremployee-production.up.railway.app/waiter/viewmenu');
+      const response = await axios.get('https://advancedwebtech-useremployee-production.up.railway.app/waiter/viewmenu');
       const data = await response.data;
     
   return { props: { data } }

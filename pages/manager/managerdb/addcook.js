@@ -28,7 +28,7 @@ export default function AddCook() {
       
         console.log(formData);
         try {
-            const response = await axios.post("advancedwebtech-useremployee-production.up.railway.app/manager/addcook",
+            const response = await axios.post("https://advancedwebtech-useremployee-production.up.railway.app/manager/addcook",
                 formData, {
                 headers: {
                     "Content-Type": "application/json"

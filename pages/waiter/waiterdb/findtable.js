@@ -144,7 +144,7 @@ export default function SearchTable({ data }) {
 export async function getServerSideProps({ query }) {
   const inputValue = query.inputValue;
   try {
-  const response = await axios.get('advancedwebtech-useremployee-production.up.railway.app/waiter/gettable/'+inputValue);
+  const response = await axios.get('https://advancedwebtech-useremployee-production.up.railway.app/waiter/gettable/'+inputValue);
   const data = await response.data;
 
   return {

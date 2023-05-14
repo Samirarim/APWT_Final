@@ -29,7 +29,7 @@ export default function AddDM() {
       
         console.log(formData);
         try {
-            const response = await axios.post("advancedwebtech-useremployee-production.up.railway.app/manager/add",
+            const response = await axios.post("https://advancedwebtech-useremployee-production.up.railway.app/manager/add",
                 formData, {
                 headers: {
                     "Content-Type": "application/json"

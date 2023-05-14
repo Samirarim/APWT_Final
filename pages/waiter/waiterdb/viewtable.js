@@ -30,7 +30,7 @@ export default function GetTable({ data }) {
   
  export async function getServerSideProps() {
  
-      const response = await axios.get('advancedwebtech-useremployee-production.up.railway.app/waiter/viewtable');
+      const response = await axios.get('https://advancedwebtech-useremployee-production.up.railway.app/waiter/viewtable');
       const data = await response.data;
     
   return { props: { data } }

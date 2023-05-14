@@ -23,7 +23,7 @@ export default function WaiterDetails({ data }) {
 
       if (confirmed) {
         const response = await axios.delete(
-          "advancedwebtech-useremployee-production.up.railway.app/manager/removewaiter/" + w_id
+          "https://advancedwebtech-useremployee-production.up.railway.app/manager/removewaiter/" + w_id
         );
         const data = await response.data;
         // handle successful delete
@@ -41,7 +41,7 @@ export default function WaiterDetails({ data }) {
 
       if (confirmed) {
         const response = await axios.patch(
-          "advancedwebtech-useremployee-production.up.railway.app/manager/updatewaiter/" + w_id,
+          "https://advancedwebtech-useremployee-production.up.railway.app/manager/updatewaiter/" + w_id,
           {
             w_name: wName,
             w_age: wAge,
@@ -254,7 +254,7 @@ export default function WaiterDetails({ data }) {
   export async function getServerSideProps(context) {
     const w_id=context.params.w_id;
    
-       const response = await axios.get('advancedwebtech-useremployee-production.up.railway.app/manager/getwaiter/'+w_id);
+       const response = await axios.get('https://advancedwebtech-useremployee-production.up.railway.app/manager/getwaiter/'+w_id);
        const data = await response.data;
       
    return { props: { data } }

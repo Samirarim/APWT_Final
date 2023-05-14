@@ -23,7 +23,7 @@ export default function MenuDetails({ data }) {
 
       if (confirmed) {
         const response = await axios.delete(
-          "advancedwebtech-useremployee-production.up.railway.app/waiter/removemenu/" + m_id
+          "https://advancedwebtech-useremployee-production.up.railway.app/waiter/removemenu/" + m_id
         );
         const data = await response.data;
         // handle successful delete
@@ -41,7 +41,7 @@ export default function MenuDetails({ data }) {
 
       if (confirmed) {
         const response = await axios.put(
-          "advancedwebtech-useremployee-production.up.railway.app/waiter/updatemenu/" + m_id,
+          "https://advancedwebtech-useremployee-production.up.railway.app/waiter/updatemenu/" + m_id,
           {
             m_name: mName,
             m_type: mType,
@@ -193,7 +193,7 @@ export async function getServerSideProps(context) {
   const m_id = context.params.m_id;
 
   const response = await axios.get(
-    "advancedwebtech-useremployee-production.up.railway.app/waiter/getmenu/" + m_id
+    "https://advancedwebtech-useremployee-production.up.railway.app/waiter/getmenu/" + m_id
   );
   const data = await response.data;
 

@@ -33,7 +33,7 @@ export default function GetWaiter({ data }) {
   
  export async function getServerSideProps() {
  
-      const response = await axios.get('advancedwebtech-useremployee-production.up.railway.app/manager/viewwaiter');
+      const response = await axios.get('https://advancedwebtech-useremployee-production.up.railway.app/manager/viewwaiter');
       const data = await response.data;
     
   return { props: { data } }

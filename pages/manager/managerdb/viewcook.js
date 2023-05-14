@@ -32,7 +32,7 @@ export default function GetChef({ data }) {
   
  export async function getServerSideProps() {
  
-      const response = await axios.get('advancedwebtech-useremployee-production.up.railway.app/manager/viewcook');
+      const response = await axios.get('https://advancedwebtech-useremployee-production.up.railway.app/manager/viewcook');
       const data = await response.data;
     
   return { props: { data } }
