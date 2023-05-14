@@ -175,7 +175,7 @@ export default function SearchMenu({ data }) {
 export async function getServerSideProps({ query }) {
   const inputValue = query.inputValue;
   try {
-  const response = await axios.get('https://nestjsproject-production-364f.up.railway.app/waiter/getorder/'+inputValue);
+  const response = await axios.get('advancedwebtech-useremployee-production.up.railway.app/waiter/getorder/'+inputValue);
   const data = await response.data;
 
   return {

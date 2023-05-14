@@ -23,7 +23,7 @@ export default function AddTable() {
       
         console.log(formData);
         try {
-            const response = await axios.post("https://nestjsproject-production-364f.up.railway.app/waiter/addtable",
+            const response = await axios.post("advancedwebtech-useremployee-production.up.railway.app/waiter/addtable",
                 formData, {
                 headers: {
                     "Content-Type": "application/json"

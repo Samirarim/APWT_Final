@@ -25,7 +25,7 @@ export default function AddOrder() {
       
         console.log(formData);
         try {
-            const response = await axios.post("https://nestjsproject-production-364f.up.railway.app/waiter/addorder",
+            const response = await axios.post("advancedwebtech-useremployee-production.up.railway.app/waiter/addorder",
                 formData, {
                 headers: {
                     "Content-Type": "application/json"

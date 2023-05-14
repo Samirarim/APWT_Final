@@ -30,7 +30,7 @@ export default function GetOrder({ data }) {
   
  export async function getServerSideProps() {
  
-      const response = await axios.get('https://nestjsproject-production-364f.up.railway.app/waiter/vieworder');
+      const response = await axios.get('advancedwebtech-useremployee-production.up.railway.app/waiter/vieworder');
       const data = await response.data;
     
   return { props: { data } }

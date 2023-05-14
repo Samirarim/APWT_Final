@@ -7,7 +7,7 @@ module.exports = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'nestjsproject-production-364f.up.railway.app',
+        hostname: 'advancedwebtech-useremployee-production.up.railway.app',
         port: '3000',    
       },
     ],

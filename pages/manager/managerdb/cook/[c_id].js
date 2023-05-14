@@ -23,7 +23,7 @@ export default function CookDetails({ data }) {
 
       if (confirmed) {
         const response = await axios.delete(
-          "https://nestjsproject-production-364f.up.railway.app/manager/removecook/" + c_id
+          "advancedwebtech-useremployee-production.up.railway.app/manager/removecook/" + c_id
         );
         const data = await response.data;
         // handle successful delete
@@ -41,7 +41,7 @@ export default function CookDetails({ data }) {
 
       if (confirmed) {
         const response = await axios.patch(
-          "https://nestjsproject-production-364f.up.railway.app/manager/updatecook/" + c_id,
+          "advancedwebtech-useremployee-production.up.railway.app/manager/updatecook/" + c_id,
           {
             c_name: cName,
             c_age: cAge,
@@ -255,7 +255,7 @@ export default function CookDetails({ data }) {
   export async function getServerSideProps(context) {
     const c_id=context.params.c_id;
    
-       const response = await axios.get('https://nestjsproject-production-364f.up.railway.app/manager/getcook/'+c_id);
+       const response = await axios.get('advancedwebtech-useremployee-production.up.railway.app/manager/getcook/'+c_id);
        const data = await response.data;
       
    return { props: { data } }
